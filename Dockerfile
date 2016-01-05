@@ -3,7 +3,7 @@ FROM java:8
 MAINTAINER Dmitry Lisin <Dmitry.Lisin@gmail.com>
 
 
-RUN RUN apt-get clean \
+RUN apt-get clean \
  && apt-get update \
  && apt-get install -yq git build-essential \
  && apt-get clean
