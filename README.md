@@ -2,8 +2,8 @@
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
  - [Ansible](http://www.ansible.com/)
  - [Git](https://git-scm.com/)
- - [Google Protobuf v2.6.1](https://developers.google.com/protocol-buffers/)
- - [Oracle JDK v1.8](http://www.oracle.com/technetwork/java/)
+ - [Google Protobuf](https://developers.google.com/protocol-buffers/)
+ - [Oracle JDK](http://www.oracle.com/technetwork/java/)
 
 ### Run
 
@@ -18,12 +18,14 @@ A TeamCity server should be up and running to be able to download the `buildAgen
  - `TEAMCITY_AGENT_PORT`: A port that TeamCity server will use to connect to the agent. Default value: `9090`
 
 #### Usage
+Pull the image, create a new container and start it:
 ```
-docker run --restart=always 
-   --name teamcity-agent \
+docker pull dlisin/teamcity-agent
+docker create --restart=always  --name build-agent \
    -e TEAMCITY_SERVER=http://localhost:8111 \
    -e TEAMCITY_AGENT_NAME=build-agent \
    -d dlisin/teamcity-agent
+docker start build-agent
 ```
 The bootstrap script will automatically download (from the TeamCity server) and start a build agent.
 
