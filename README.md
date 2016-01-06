@@ -4,7 +4,6 @@
  - [Git](https://git-scm.com/)
  - [Google Protobuf v2.6.1](https://developers.google.com/protocol-buffers/)
  - [Oracle JDK v1.8](http://www.oracle.com/technetwork/java/)
- - [Perforce Client v2015.2](https://www.perforce.com/)
 
 ### Run
 

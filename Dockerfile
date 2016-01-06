@@ -34,15 +34,6 @@ RUN mkdir -p /opt/protobuf \
  && protoc --version
 
 
-# Install Perforce Client v2015.2
-RUN mkdir -p /opt/perforce \
- && wget -P /opt/perforce http://cdist2.perforce.com/perforce/r15.2/bin.linux26x86_64/p4 \
- && chmod a+x /opt/perforce/p4 \
-
-ENV P4_HOME=/opt/perforce
-ENV PATH=$P4_HOME:$PATH
-
-
 # Install TeamCity Build Agent
 ENV GIT_USER_NAME "teamcity"
 ENV GIT_USER_EMAIL "teamcity@jetbrains.com"
