@@ -1,8 +1,9 @@
 ### TeamCity Build Agent
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
- - Git
+ - [Git](https://git-scm.com/)
  - [Google Protobuf v2.6.1](https://developers.google.com/protocol-buffers/)
- - [Oracle JDK v1.8u66](http://www.oracle.com/technetwork/java/javase/overview/index.html)
+ - [Oracle JDK v1.8u66](http://www.oracle.com/technetwork/java/)
+ - [Perforce Client v2015.2](https://www.perforce.com/)
 
 ### Run
 
