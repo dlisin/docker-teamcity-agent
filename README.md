@@ -41,7 +41,7 @@ docker start build-agent
 ```
 
 #### .ssh and .gitconfig
-Example how to mount .ssh folder and .gitconfig file to container:
+Example how to mount `.ssh` folder and `.gitconfig` file to container:
 ```
 docker pull dlisin/teamcity-agent
 docker create --restart=always --name build-agent \
