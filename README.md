@@ -21,10 +21,10 @@ A TeamCity server should be up and running to be able to download the `buildAgen
 Pull the image, create a new container and start it:
 ```
 docker pull dlisin/teamcity-agent
-docker create --restart=always  --name build-agent \
+docker create --restart=always --name build-agent \
    -e TEAMCITY_SERVER=http://localhost:8111 \
    -e TEAMCITY_AGENT_NAME=build-agent \
-   -d dlisin/teamcity-agent
+   dlisin/teamcity-agent
 docker start build-agent
 ```
 The bootstrap script will automatically download (from the TeamCity server) and start a build agent.
