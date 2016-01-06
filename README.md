@@ -11,8 +11,6 @@
 A TeamCity server should be up and running to be able to download the `buildAgent` zip file.
 
 #### Environment variables
- - `GIT_USER_NAME`: Git user name. Default value: `teamcity`
- - `GIT_USER_EMAIL`: Git user email address. Default value: `teamcity@jetbrains.com`
  - `TEAMCITY_SERVER`: The address of the TeamCity server. Default value: `http://localhost:8111/`
  - `TEAMCITY_AGENT_NAME`: The unique name of the agent used to identify this agent on the TeamCity server.
  - `TEAMCITY_AGENT_PORT`: A port that TeamCity server will use to connect to the agent. Default value: `9090`
@@ -42,12 +40,25 @@ docker create --restart=always --name build-agent \
 docker start build-agent   
 ```
 
-#### View logs
+#### .ssh and .gitconfig
+Example how to mount .ssh folder and .gitconfig file to container:
 ```
-docker logs build-agent
+docker pull dlisin/teamcity-agent
+docker create --restart=always --name build-agent \
+   -e TEAMCITY_SERVER=http://localhost:8111 \
+   -e TEAMCITY_AGENT_NAME=build-agent \
+   -v ~/.ssh:/root/.ssh \
+   -v ~/.gitocnfig:/root/.gitconfig \
+   dlisin/teamcity-agent
+docker start build-agent   
 ```
 
 #### Build
 ```
 docker build -t dlisin/teamcity-agent .
+```
+
+#### View logs
+```
+docker logs build-agent
 ```

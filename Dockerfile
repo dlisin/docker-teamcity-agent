@@ -22,19 +22,11 @@ RUN apt-get update \
 
 
 # Install TeamCity Build Agent
-ENV GIT_USER_NAME "teamcity"
-ENV GIT_USER_EMAIL "teamcity@jetbrains.com"
 ENV TEAMCITY_AGENT_NAME ""
 ENV TEAMCITY_AGENT_PORT 9090
 ENV TEAMCITY_SERVER "http://localhost:8111"
 
-RUN useradd -m teamcity
-
-ADD teamcity-agent.sh /home/teamcity/teamcity-agent.sh
-RUN chown teamcity:teamcity /home/teamcity/teamcity-agent.sh
-
-
-USER teamcity
+ADD teamcity-agent.sh teamcity-agent.sh
 
 EXPOSE $TEAMCITY_AGENT_PORT
 CMD ["/home/teamcity/teamcity-agent.sh"]

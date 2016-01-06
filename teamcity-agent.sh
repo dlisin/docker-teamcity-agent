@@ -16,11 +16,6 @@ if [ ! -d "$TEAMCITY_AGENT_DIR" ]; then
     && sed -i 's#^\(name=\).*$#\1'$TEAMCITY_AGENT_NAME'#' conf/buildAgent.properties \
     && sed -i 's#^\(ownPort=\).*$#\1'$TEAMCITY_AGENT_PORT'#' conf/buildAgent.properties \
     && chmod +x $TEAMCITY_AGENT_DIR/bin/agent.sh
-
-    echo "First-Time Git setup"
-    git config --global user.name "&GIT_USER_NAME"
-    git config --global user.email "$GIT_USER_EMAIL"
-
 fi
 
 echo "Using agent at ${TEAMCITY_AGENT_DIR}."
