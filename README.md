@@ -1,5 +1,6 @@
 ### TeamCity Build Agent
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
+ - [Ansible](http://www.ansible.com/)
  - [Git](https://git-scm.com/)
  - [Google Protobuf v2.6.1](https://developers.google.com/protocol-buffers/)
  - [Oracle JDK v1.8](http://www.oracle.com/technetwork/java/)
