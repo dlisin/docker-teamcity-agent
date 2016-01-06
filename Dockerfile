@@ -4,19 +4,25 @@ MAINTAINER Dmitry Lisin <Dmitry.Lisin@gmail.com>
 
 
 RUN apt-get update \
- && apt-get install -yq wget unzip git build-essential \
+ && apt-get install -yq wget unzip git build-essential software-properties-common \
  && apt-get clean
 
 
-# Install Oracle JDK v1.8u66
-ENV JAVA_HOME=/opt/jdk/jdk1.8.0_66
-ENV PATH=$JAVA_HOME/bin:$PATH
-
-RUN mkdir -p /opt/jdk \ 
- && wget --header="Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz \
- && tar -C /opt/jdk -xzf  jdk-8u66-linux-x64.tar.gz \
- && rm jdk-8u66-linux-x64.tar.gz \
+# Install Oracle JDK 8
+RUN apt-add-repository ppa:webupd8team/java \
+ && apt-get update \
+ && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
+ && apt-get install -yq oracle-java8-installer \
+ && apt-get clean \
  && java -version
+
+
+# Install Ansible
+RUN apt-add-repository ppa:ansible/ansible \
+ && apt-get update \
+ && apt-get install -yq ansible \
+ && apt-get clean \
+ && ansible --version
 
 
 # Install Google Protobuf v2.6.1
