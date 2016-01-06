@@ -4,7 +4,7 @@ MAINTAINER Dmitry Lisin <Dmitry.Lisin@gmail.com>
 
 
 RUN apt-get update \
- && apt-get install -yq wget git build-essential \
+ && apt-get install -yq wget unzip git build-essential \
  && apt-get clean
 
 
