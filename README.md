@@ -19,7 +19,8 @@ A TeamCity server should be up and running to be able to download the `buildAgen
 
 #### Usage
 ```
-docker run --name teamcity-agent \
+docker run --restart=always 
+   --name teamcity-agent \
    -e TEAMCITY_SERVER=http://localhost:8111 \
    -e TEAMCITY_AGENT_NAME=build-agent \
    -d dlisin/teamcity-agent

@@ -5,33 +5,20 @@ MAINTAINER Dmitry Lisin <Dmitry.Lisin@gmail.com>
 
 RUN apt-get update \
  && apt-get install -yq \
- 			build-essential \
  			software-properties-common \
- 			unzip \
- 			wget \
  && apt-add-repository ppa:webupd8team/java \
  && apt-add-repository ppa:ansible/ansible \
+ && apt-add-repository ppa:ubuntu-lxc/lxd-stable  \
  && apt-get update \
  && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
  && apt-get install -yq \
+ 			ansible \
  			git \
  			oracle-java8-installer \
- 			ansible \
+ 			protobuf-compiler \
+ 			unzip \
+ 			wget \
  && apt-get clean
-
-
-# Install Google Protobuf v2.6.1
-RUN mkdir -p /opt/protobuf \
- && wget https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz \
- && tar -C /opt/protobuf -xzf protobuf-2.6.1.tar.gz \
- && rm protobuf-2.6.1.tar.gz \
- && cd /opt/protobuf/protobuf-2.6.1 \
- && ./configure \
- && make \
- && make check \
- && make install \
- && ldconfig \
- && protoc --version
 
 
 # Install TeamCity Build Agent
