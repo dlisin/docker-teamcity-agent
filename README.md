@@ -15,6 +15,7 @@ A TeamCity server should be up and running to be able to download the `buildAgen
  - `TEAMCITY_AGENT_PORT`: A port that TeamCity server will use to connect to the agent. Default value: `9090`
 
 #### Example 
+```
 docker run -d --name teamcity-agent \
     -e TEAMCITY_SERVER=http://localhost:8111 
     -e TEAMCITY_AGENT_NAME=build-agent \
