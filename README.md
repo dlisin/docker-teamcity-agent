@@ -30,7 +30,7 @@ docker start build-agent
 The bootstrap script will automatically download (from the TeamCity server) and start a build agent.
 
 #### Upgrade
-Pull updated image, stop and remove existing container, then create and start new containerЖ
+Pull updated image, stop and remove existing container, then create and start new container:
 ```
 docker pull dlisin/teamcity-agent
 docker stop build-agent
