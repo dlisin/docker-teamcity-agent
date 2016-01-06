@@ -1,7 +1,8 @@
-# docker-teamcity-agent
-Docker container for [TeamCity](https://www.jetbrains.com/teamcity/) build agent
+[TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
+ - Git
+ - [Google Protobuf v2.6.1](https://developers.google.com/protocol-buffers/)
+ - [Oracle JDK v1.8u66](http://www.oracle.com/technetwork/java/javase/overview/index.html)
 
-## Usage
 
 ### Build
 ```
@@ -21,7 +22,8 @@ docker build -t dlisin/teamcity-agent .
 A TeamCity server should be up and running to be able to download the `buildAgent` zip file.
 ```
 docker run -d --name teamcity-agent \
-   -e TEAMCITY_SERVER=http://localhost:8111  -e TEAMCITY_AGENT_NAME=build-agent \
-   dlisin/teamcity-agent
+    -e TEAMCITY_SERVER=http://localhost:8111 
+    -e TEAMCITY_AGENT_NAME=build-agent \
+  dlisin/teamcity-agent
 ```
 The bootstrap script will automatically download (from the TeamCity server) and start a build agent.
