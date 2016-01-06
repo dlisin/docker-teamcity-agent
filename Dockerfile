@@ -9,6 +9,22 @@ RUN apt-get clean \
  && apt-get clean
 
 
+# Install Google Protobuf
+ENV PROTOBUF_VERSION 2.6.1
+RUN wget https://github.com/google/protobuf/releases/download/v$PROTOBUF_VERSION/protobuf-$PROTOBUF_VERSION.tar.gz \
+ && tar -xzf protobuf-$PROTOBUF_VERSION.tar.gz \
+ && rm protobuf-$PROTOBUF_VERSION.tar.gz \
+ && cd protobuf-$PROTOBUF_VERSION \
+ && ./configure \
+ && make \
+ && make check \
+ && make install \
+ && ldconfig \
+ && protoc --version \
+ && cd .. \
+ && rm -rf protobuf-$PROTOBUF_VERSION
+
+
 # Install TeamCity Build Agent
 ENV TEAMCITY_AGENT_NAME ""
 ENV TEAMCITY_AGENT_PORT 9090
