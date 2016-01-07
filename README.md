@@ -47,10 +47,18 @@ docker pull dlisin/teamcity-agent
 docker create --restart=always --name build-agent \
    -e TEAMCITY_SERVER=http://localhost:8111 \
    -e TEAMCITY_AGENT_NAME=build-agent \
-   -v ~/.ssh:/root/.ssh \
+   -v ~/.ssh/id_rsa:/root/.ssh/id_rsa \
    -v ~/.gitconfig:/root/.gitconfig \
    dlisin/teamcity-agent
 docker start build-agent   
+```
+#### Start `bash` on running container
+```
+docker exec -i -t build-agent bash
+```
+#### View logs
+```
+docker logs build-agent
 ```
 
 #### Build
@@ -58,7 +66,3 @@ docker start build-agent
 docker build -t dlisin/teamcity-agent .
 ```
 
-#### View logs
-```
-docker logs build-agent
-```
