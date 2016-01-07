@@ -1,5 +1,4 @@
 ### TeamCity Build Agent
-============================
 [![](https://badge.imagelayers.io/dlisin/teamcity-agent:latest.svg)](https://imagelayers.io/?images=dlisin/teamcity-agent:latest 'Get your own badge on imagelayers.io')
 
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
