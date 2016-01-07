@@ -48,7 +48,7 @@ docker create --restart=always --name build-agent \
    -e TEAMCITY_SERVER=http://localhost:8111 \
    -e TEAMCITY_AGENT_NAME=build-agent \
    -v ~/.ssh:/root/.ssh \
-   -v ~/.gitocnfig:/root/.gitconfig \
+   -v ~/.gitconfig:/root/.gitconfig \
    dlisin/teamcity-agent
 docker start build-agent   
 ```
