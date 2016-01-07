@@ -29,4 +29,4 @@ ENV TEAMCITY_SERVER "http://localhost:8111"
 ADD teamcity-agent.sh teamcity-agent.sh
 
 EXPOSE $TEAMCITY_AGENT_PORT
-CMD ["teamcity-agent.sh"]
+CMD ["./teamcity-agent.sh"]
