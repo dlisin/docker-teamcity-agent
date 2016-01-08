@@ -18,6 +18,7 @@ RUN apt-get update \
  			protobuf-compiler \
  			unzip \
  			wget \
+                        uuid-runtime \
  && apt-get clean
 
 
