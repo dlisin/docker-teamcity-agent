@@ -37,6 +37,25 @@ docker run -d --restart=always --name my-build-agent \
    -v ~/.gitconfig:/root/.gitconfig \
    dlisin/teamcity-agent
 ```
+##### Maven repository
+The Local Maven repository created in `/root/.m2/repository`. This directory can be shared between severals agents with a [data container](https://docs.docker.com/engine/userguide/dockervolumes/)
+
+Example: 
+```
+docker run -d --name maven-repository -v /root/.m2/repository busybox
+
+docker run -d --restart=always --name agent-01 \
+   -e TEAMCITY_SERVER=http://localhost:8111 \
+   -e TEAMCITY_AGENT_NAME=agent-01 \
+   --volumes-from maven-repository \
+   dlisin/teamcity-agent
+  
+docker run -d --restart=always --name agent-02 \
+   -e TEAMCITY_SERVER=http://localhost:8111 \
+   -e TEAMCITY_AGENT_NAME=agent-02 \
+   --volumes-from maven-repository \
+   dlisin/teamcity-agent
+```
 
 #### Start build agent
 ```
