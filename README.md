@@ -2,9 +2,10 @@
 [![](https://badge.imagelayers.io/dlisin/teamcity-agent:latest.svg)](https://imagelayers.io/?images=dlisin/teamcity-agent:latest 'Get your own badge on imagelayers.io')
 
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
- - [Ansible](http://www.ansible.com/)
+ - [Ansible](https://www.ansible.com/)
  - [Git](https://git-scm.com/)
  - [Google Protobuf](https://developers.google.com/protocol-buffers/)
+ - [NodeJS 5.x](https://nodejs.org/)
 
 ### Usage
 
