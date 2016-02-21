@@ -5,7 +5,7 @@
  - [Ansible](https://www.ansible.com/)
  - [Git](https://git-scm.com/)
  - [Google Protobuf](https://developers.google.com/protocol-buffers/)
- - [NodeJS 5.x](https://nodejs.org/)
+ - [Node.JS 5.x](https://nodejs.org/)
 
 ### Usage
 
