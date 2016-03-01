@@ -10,7 +10,7 @@ RUN apt-get update \
             unzip \
             wget \            
  && apt-add-repository ppa:webupd8team/java \
- && apt-add-repository ppa:ansible/ansible \
+ && apt-add-repository ppa:ansible/ansible-1.9 \
  && apt-add-repository ppa:ubuntu-lxc/lxd-stable  \
  && curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - \
  && apt-get update \
