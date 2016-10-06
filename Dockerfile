@@ -11,13 +11,15 @@ RUN apt-get update \
             wget \            
  && apt-add-repository ppa:webupd8team/java \
  && apt-add-repository ppa:ansible/ansible-1.9 \
- && apt-add-repository ppa:ubuntu-lxc/lxd-stable  \
- && curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - \
+ && apt-add-repository ppa:ubuntu-lxc/lxd-stable \
+ && add-apt-repository ppa:cwchien/gradle \
+ && curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - \
  && apt-get update \
  && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
  && apt-get install -yq \
             ansible \            
             git \
+            gradle \
             nodejs \
             oracle-java8-installer \
             protobuf-compiler \
