@@ -2,7 +2,7 @@
 [![](https://badge.imagelayers.io/dlisin/teamcity-agent:latest.svg)](https://imagelayers.io/?images=dlisin/teamcity-agent:latest 'Get your own badge on imagelayers.io')
 
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
- - [Ansible 1.9.x](https://www.ansible.com/)
+ - [Ansible 1.9.4](https://www.ansible.com/)
  - [Git](https://git-scm.com/)
  - [Gradle 3.x](https://gradle.org)
  - [Google Protobuf](https://developers.google.com/protocol-buffers/)
