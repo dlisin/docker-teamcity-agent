@@ -2,7 +2,6 @@ FROM ubuntu:14.04
 
 MAINTAINER Dmitry Lisin <Dmitry.Lisin@gmail.com>
 
-
 RUN apt-get update \
  && apt-get install -yq \
             software-properties-common \
@@ -26,6 +25,8 @@ RUN apt-get update \
             uuid-runtime \
  && apt-get clean
 
+# Set env. variables
+ENV GRADLE_HOME=/usr/lib/gradle/default/
 
 # Install TeamCity Build Agent
 ENV TEAMCITY_AGENT_NAME ""
