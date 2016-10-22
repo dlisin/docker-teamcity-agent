@@ -31,7 +31,7 @@ RUN apt-get update \
  && apt-get clean
 
 # Set env. variables
-ENV GRADLE_HOME=/usr/lib/gradle/${GRADLE_VERSION}/
+ENV GRADLE_HOME=/usr/lib/gradle/default/
 
 # Install TeamCity Build Agent
 ENV TEAMCITY_AGENT_NAME ""
