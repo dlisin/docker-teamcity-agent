@@ -29,15 +29,13 @@ RUN apt-get update \
             uuid-runtime \
  && apt-get clean
 
-# Set env. variables
-ENV GRADLE_HOME=/usr/lib/gradle/${GRADLE_VERSION}/
+COPY run-agent.sh /run-agent.sh
 
-# Install TeamCity Build Agent
+ENV GRADLE_HOME=/usr/lib/gradle/${GRADLE_VERSION}/
 ENV TEAMCITY_AGENT_NAME ""
 ENV TEAMCITY_AGENT_PORT 9090
 ENV TEAMCITY_SERVER "http://localhost:8111"
 
-ADD teamcity-agent.sh teamcity-agent.sh
-
 EXPOSE $TEAMCITY_AGENT_PORT
-CMD ["./teamcity-agent.sh"]
+
+CMD ["/run-agent.sh"]
