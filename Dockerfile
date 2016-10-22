@@ -14,8 +14,7 @@ RUN apt-get update \
             curl \
             unzip \
             wget \
- && apt-add-repository ppa:webupd8team/java \
- && apt-add-repository ppa:ubuntu-lxc/lxd-stable \
+ && apt-add-repository ppa:webupd8team/java \ 
  && add-apt-repository ppa:cwchien/gradle \
  && curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - \
  && apt-get update \
@@ -31,7 +30,7 @@ RUN apt-get update \
  && apt-get clean
 
 # Set env. variables
-ENV GRADLE_HOME=/usr/lib/gradle/default/
+ENV GRADLE_HOME=/usr/lib/gradle/${GRADLE_VERSION}/
 
 # Install TeamCity Build Agent
 ENV TEAMCITY_AGENT_NAME ""
