@@ -15,7 +15,7 @@ RUN apt-get update \
             unzip \
             wget \
  && apt-add-repository ppa:webupd8team/java \ 
- && add-apt-repository ppa:cwchien/gradle \
+ && apt-add-repository ppa:cwchien/gradle \
  && curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - \
  && apt-get update \
  && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
