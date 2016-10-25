@@ -5,7 +5,7 @@
  - [Git](https://git-scm.com/)
  - [Gradle 2.14.1](https://gradle.org)
  - [Google Protobuf](https://developers.google.com/protocol-buffers/)
- - [Node.JS 4.x](https://nodejs.org/)
+ - [Node.JS 6.x](https://nodejs.org/)
 
 ### Usage
 

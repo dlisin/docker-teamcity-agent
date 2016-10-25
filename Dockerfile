@@ -16,7 +16,7 @@ RUN apt-get update \
             wget \
  && apt-add-repository ppa:webupd8team/java \ 
  && apt-add-repository ppa:cwchien/gradle \
- && curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - \
+ && curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - \
  && apt-get update \
  && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
  && pip install ansible==${ANSIBLE_VERSION} \
