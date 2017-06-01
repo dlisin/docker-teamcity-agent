@@ -3,9 +3,9 @@
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
  - [Ansible 1.9.4](https://www.ansible.com/)
  - [Git](https://git-scm.com/)
- - [Gradle 2.14.1](https://gradle.org)
+ - [Gradle 3.5](https://gradle.org)
  - [Google Protobuf](https://developers.google.com/protocol-buffers/)
- - [Node.JS 6.x](https://nodejs.org/)
+ - [Node.JS 8.x](https://nodejs.org/)
 
 ### Usage
 
