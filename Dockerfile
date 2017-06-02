@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER Dmitry Lisin <Dmitry.Lisin@gmail.com>
 
 ARG ANSIBLE_VERSION=1.9.4
-ARG GRADLE_VERSION=3.5
+ARG GRADLE_VERSION=2.14.1
 ARG NODEJS_VERSION=8.x
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -18,23 +18,28 @@ RUN apt-get update \
             unzip \
             wget \
  && apt-add-repository ppa:webupd8team/java \ 
- && apt-add-repository ppa:cwchien/gradle \
  && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION} | sudo -E bash - \
  && apt-get update \
  && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
  && pip install ansible==${ANSIBLE_VERSION} \
  && apt-get install -yq \
             git \
-            gradle-${GRADLE_VERSION} \
             nodejs \
             oracle-java8-installer \
             protobuf-compiler \
             uuid-runtime \
  && apt-get clean
 
+RUN cd /usr/lib \
+ && curl -fl https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -o gradle-bin.zip \
+ && unzip "gradle-bin.zip" \
+ && ln -s "/usr/lib/gradle-${GRADLE_VERSION}/bin/gradle" /usr/bin/gradle \
+ && rm "gradle-bin.zip"
+
 COPY run-agent.sh /run-agent.sh
 
-ENV GRADLE_HOME=/usr/lib/gradle/${GRADLE_VERSION}/
+ENV GRADLE_HOME /usr/lib/gradle
+ENV PATH $GRADLE_HOME/bin:$PATH
 ENV TEAMCITY_AGENT_NAME ""
 ENV TEAMCITY_AGENT_PORT 9090
 ENV TEAMCITY_SERVER "http://localhost:8111"
