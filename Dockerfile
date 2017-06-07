@@ -38,7 +38,7 @@ RUN cd /usr/lib \
 
 COPY run-agent.sh /run-agent.sh
 
-ENV GRADLE_HOME /usr/lib/gradle
+ENV GRADLE_HOME /usr/lib/gradle-${GRADLE_VERSION}
 ENV PATH $GRADLE_HOME/bin:$PATH
 ENV TEAMCITY_AGENT_NAME ""
 ENV TEAMCITY_AGENT_PORT 9090
