@@ -50,7 +50,8 @@ docker run -d --restart=always --name my-build-agent \
    -v ~/.gitconfig:/root/.gitconfig \
    dlisin/teamcity-agent
 ```
-##### Maven repository
+
+#### Maven repository
 The Local Maven repository created in `/root/.m2/repository`. This directory can be shared between severals agents with a [data container](https://docs.docker.com/engine/userguide/dockervolumes/)
 
 Example: 
