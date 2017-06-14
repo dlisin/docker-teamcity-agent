@@ -2,16 +2,21 @@
 
 [TeamCity Build Agent](https://www.jetbrains.com/teamcity/) image with a number of preinstalled build tools:
  - [Ansible 1.9.4](https://www.ansible.com/)
+ - [Apache JMeter 3.2](http://jmeter.apache.org/)
  - [Git](https://git-scm.com/)
  - [Gradle 2.14.1](https://gradle.org)
  - [Google Protobuf](https://developers.google.com/protocol-buffers/)
  - [Node.JS 8.x](https://nodejs.org/)
 
 ### Supported tags and respective `Dockerfile` links
- - `1.1`, `latest` ([v1.1/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/master/Dockerfile))
+ - `1.2`, `latest` ([v1.1/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/master/Dockerfile))
+ - `1.1` ([v1.1/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/release/v1.1/Dockerfile))
  - `1.0` ([v1.0/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/release/v1.0/Dockerfile))
 
 ### What's new?
+
+#### 1.2 (2017-06-15)
+ - Apache JMeter 3.2
 
 #### 1.1 (2017-06-07)
  - NodeJS 6.x -> 8.x
