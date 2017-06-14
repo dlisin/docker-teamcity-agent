@@ -10,8 +10,8 @@
 
 ### Supported tags and respective `Dockerfile` links
  - `1.2`, `latest` ([v1.1/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/master/Dockerfile))
- - `1.1` ([v1.1/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/release/v1.1/Dockerfile))
- - `1.0` ([v1.0/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/release/v1.0/Dockerfile))
+ - `1.1` ([v1.1/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/1.1/Dockerfile))
+ - `1.0` ([v1.0/Dockerfile](https://github.com/dlisin/docker-teamcity-agent/blob/1.0/Dockerfile))
 
 ### What's new?
 
